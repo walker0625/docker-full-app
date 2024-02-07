@@ -1,0 +1,43 @@
+version: "3"
+services:
+  frontend: 
+    image: walker0625/frontend
+    volumes:
+      - /app/node_modules
+      - ./frontend:/app
+    stdin_open: true
+    mem_limit: 128m
+
+  nginx:
+    restart: always
+    image: walker0625/nginx
+    ports: 
+      - "80:80"
+
+  backend:  
+    image: walker0625/backend
+    container_name: app_backend
+    volumes:
+      - /app/node_modules
+      - ./backend:/app
+    mem_limit: 128m
+    environment: 
+      MYSQL_HOST: $MYSQL_HOST 
+      MYSQL_USER: $MYSQL_USER 
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_PORT: $MYSQL_PORT  
+
+  # <instead use aws rds>      
+  # mysql:
+  #   build: ./mysql
+  #   restart: unless-stopped
+  #   container_name: app_mysql
+  #   ports:
+  #     - "3307:3307"
+  #   volumes:
+  #     - ./mysql/mysql_data:/var/lib/mysql
+  #     - ./mysql/sqls/:/docker-entrypoint-initdb.d/
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: qwe123!@#
+  #     MYSQL_DATABASE: textapp
