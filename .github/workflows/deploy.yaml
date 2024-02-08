@@ -13,9 +13,9 @@ jobs:
       - run: docker build -t jmw0625/frontend -f ./frontend/Dockerfile.dev ./frontend
       - run: docker run -e CI=true jmw0625/frontend npm test
 
-      - run: docker build -t jwm0625/frontend ./frontend
-      - run: docker build -t jwm0625/nginx ./nginx
-      - run: docker build -t jwm0625/backend ./backend
+      - run: docker build -t jmw0625/frontend ./frontend
+      - run: docker build -t jmw0625/nginx ./nginx
+      - run: docker build -t jmw0625/backend ./backend
 
       - run: docker push jmw0625/frontend
       - run: docker push jmw0625/nginx
