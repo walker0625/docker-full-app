@@ -1,7 +1,7 @@
 version: "3"
 services:
   frontend: 
-    image: walker0625/frontend
+    image: jmw0625/frontend
     volumes:
       - /app/node_modules
       - ./frontend:/app
@@ -10,12 +10,12 @@ services:
 
   nginx:
     restart: always
-    image: walker0625/nginx
+    image: jmw0625/nginx
     ports: 
       - "80:80"
 
   backend:  
-    image: walker0625/backend
+    image: jmw0625/backend
     container_name: app_backend
     volumes:
       - /app/node_modules
