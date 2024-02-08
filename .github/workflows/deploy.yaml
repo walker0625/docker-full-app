@@ -17,9 +17,9 @@ jobs:
       - run: docker build -t walker0625/nginx ./nginx
       - run: docker build -t walker0625/backend ./backend
 
-      - run: docker push docker.io/walker0625/frontend
-      - run: docker push docker.io/walker0625/nginx
-      - run: docker push docker.io/walker0625/backend
+      - run: docker push walker0625/frontend
+      - run: docker push walker0625/nginx
+      - run: docker push walker0625/backend
 
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
