@@ -35,6 +35,13 @@ function App() {
       })
   }
 
+  const deleteHandler = (event) => {
+    axios.delete('/api/values')
+      .then(response => {
+        console.log(response);
+      });
+  }
+
   return (
     <div className="App">
       <header className="App-header">
@@ -53,6 +60,7 @@ function App() {
               value={value}
             />
             <button type="submit">save</button>
+            <button type="button" onClick={deleteHandler}>delete All</button>
           </form>
         </div>
       </header>
