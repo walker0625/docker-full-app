@@ -65,3 +65,16 @@ form.example::after {
   clear: both;
   display: table;
 }
+
+.btn-container {
+  width: 375px;
+  display: flex;
+  justify-content: center; /* 수평 가운데 정렬 */
+  align-items: center; /* 수직 가운데 정렬 */
+  margin-top: 20px; /* 원하는 만큼의 위쪽 여백 추가 */
+}
+
+.btn-delete {
+  background: #F5330A;
+  width: 150px;
+}

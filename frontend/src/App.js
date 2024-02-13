@@ -39,6 +39,7 @@ function App() {
     axios.delete('/api/values')
       .then(response => {
         console.log(response);
+        setLists([]);
       });
   }
 
@@ -60,8 +61,10 @@ function App() {
               value={value}
             />
             <button type="submit">save</button>
-            <button type="button" onClick={deleteHandler}>delete All</button>
           </form>
+        </div>
+        <div className="btn-container">
+          <button type="button" className="btn-delete" background="#F5330A" onClick={deleteHandler}>delete All</button>
         </div>
       </header>
     </div>
