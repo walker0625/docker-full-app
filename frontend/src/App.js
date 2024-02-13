@@ -56,15 +56,15 @@ function App() {
           <form className="example" onSubmit={submitHandler}>
             <input
               type="text"
-              placeholder="write text"
+              placeholder="Write Text"
               onChange={changeHandler}
               value={value}
             />
-            <button type="submit">save</button>
+            <button type="submit">Save</button>
           </form>
         </div>
         <div className="btn-container">
-          <button type="button" className="btn-delete" background="#F5330A" onClick={deleteHandler}>delete All</button>
+          <button type="button" className="btn-delete" background="#F5330A" onClick={deleteHandler}>Delete All</button>
         </div>
       </header>
     </div>

@@ -77,4 +77,5 @@ form.example::after {
 .btn-delete {
   background: #F5330A;
   width: 150px;
+  height: 30px;
 }
